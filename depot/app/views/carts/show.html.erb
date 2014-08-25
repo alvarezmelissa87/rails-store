@@ -2,16 +2,7 @@
 <p id="notice"><%= notice %></p>
 <% end %>
 
-<h2>Your Cart</h2>
-<table>
-  <% render (@cart.line_items) %>  <!--render will automatically iterate over any collection passed to it -->
+<% render (@cart) %>  <!--render will automatically iterate over any collection passed to it -->
 
-    <tr class="total_line">
-      <td colspan="2">Total</td>
-      <td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
-    </tr>
-</table>
 
-<%= button_to 'Empty Cart', @cart, method: :delete,
-    data: {confirm: 'Are you sure, dude?'} %>
 
