@@ -32,6 +32,8 @@ class LineItemsController < ApplicationController
     respond_to do |format|
       if @line_item.save
         format.html { redirect_to store_url}
+        format.js
+      #now when create  finishes handling the ajax request, rails will look for a create template to render
         format.json { render :show, status: :created, location: @line_item }
       else
         format.html { render :new }
