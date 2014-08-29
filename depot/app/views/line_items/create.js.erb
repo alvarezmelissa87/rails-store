@@ -1,6 +1,7 @@
 // tells the browser to replace the content of the element with the cart id with that HTML
 // the escape_javascript() helper method converts this Ruby string into a format acceptable as input to JS
 if ($('#cart tr').length == 1) {$('#cart').show('blind', 1000);}
+
 $('#cart').html("<%= escape_javascript render(@cart) %>");
 
 $('#current_item').css({'background-color':'#88ff88'}).animate({'background-color':'#114411'}, 1000);
