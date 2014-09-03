@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  include CurrentCart
+  before_action :set_cart, only: [:index, :new, :create]
   def new
   end
 
