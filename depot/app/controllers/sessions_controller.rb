@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  skip_before_action :authorize #this tells the controller we don't need the authorize method
+                                # before each action here
   include CurrentCart
   before_action :set_cart, only: [:index, :new, :create]
   def new
